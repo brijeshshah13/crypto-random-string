@@ -1,9 +1,14 @@
 package cryptorandomstring
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestGenerate(t *testing.T) {
-	if got := Generate(); got == "" {
-		t.Errorf("Expected random string is empty")
+	if got, err := WithLength(10).WithKind("base64").Generate(); err != nil {
+		t.Error(err)
+	} else {
+		fmt.Printf("got: %v\n", got)
 	}
 }
