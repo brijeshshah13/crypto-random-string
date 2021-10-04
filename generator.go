@@ -1,5 +1,7 @@
 package cryptorandomstring
 
+import "strings"
+
 type Generator struct {
 	length     uint64
 	kind       string
@@ -7,6 +9,14 @@ type Generator struct {
 }
 
 const defaultKind = "hex"
+
+var (
+	urlSafeCharacters         = strings.Split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~", "")
+	numericCharacters         = strings.Split("0123456789", "")
+	distinguishableCharacters = strings.Split("CDEHKMPRTUWXY012458", "")
+	asciiPrintableCharacters  = strings.Split("!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~", "")
+	alphanumericCharacters    = strings.Split("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", "")
+)
 
 var allowedTypes = map[string]bool{
 	"":                true,
