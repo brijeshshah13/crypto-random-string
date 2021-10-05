@@ -2,8 +2,8 @@
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/brijeshshah13/crypto-random-string.svg)](https://pkg.go.dev/github.com/brijeshshah13/crypto-random-string)
 
-You can use this library to generate a cryptographically strong random string which can be useful for creating an
-identifier, slug, salt, PIN code, fixture, etc.
+You can use this library to generate a cryptographically strong random string for creating an identifier, slug, salt,
+PIN code, fixture, etc.
 
 ## Installation
 
